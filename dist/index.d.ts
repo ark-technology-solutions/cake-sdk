@@ -1,10 +1,11 @@
+import pg from 'pg';
 export declare function connect(config: {
     user: string;
     password: string;
     host: string;
     port: number;
     database: string;
-}): Promise<any>;
+}): Promise<pg.Client>;
 export declare function getVersion(): string;
 export declare function createTables(): Promise<{
     name: string;

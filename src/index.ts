@@ -1,7 +1,7 @@
 import pg from 'pg'
 const version = '1.0.0';
-const { Pool } = pg
-let client = null
+const { Client } = pg
+let client: pg.Client | null = null
 /**
  * @description Connect to the postgres database
  */
@@ -12,7 +12,7 @@ export async function connect(config: {
     port: number,
     database: string
 }) {
-    client = new Pool({
+    client = new Client({
         user: config.user,
         password: config.password,
         host: config.host,
@@ -54,7 +54,7 @@ export async function createTables() {
                 },
                 {
                     name: 'type',
-                    type: 'tinyint'
+                    type: 'smallint'
                 }
             ]
         }
