@@ -1,6 +1,6 @@
 import pg from 'pg'
 const version = '1.0.0';
-const { Client } = pg
+const { Pool } = pg
 let client = null
 /**
  * @description Connect to the postgres database
@@ -12,7 +12,7 @@ export async function connect(config: {
     port: number,
     database: string
 }) {
-    client = new Client({
+    client = new Pool({
         user: config.user,
         password: config.password,
         host: config.host,
