@@ -1,7 +1,10 @@
 import pg from 'pg'
+
 const version = '1.0.0';
 const { Client } = pg
-const client = new Client()
+const client = new Client({
+    connectionString: process.env.DATABASE_URL
+})
 /**
  * @description Connect to the postgres database
  */
