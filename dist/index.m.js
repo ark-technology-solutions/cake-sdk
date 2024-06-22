@@ -1,0 +1,1 @@
+import r from"pg";var t=function(r){try{return e.user=r.user,e.password=r.password,e.host=r.host,e.port=r.port,e.database=r.database,Promise.resolve(e.connect()).then(function(){return e})}catch(r){return Promise.reject(r)}},e=new(0,r.Client);function o(){return"1.0.0"}export{t as connect,o as getVersion};

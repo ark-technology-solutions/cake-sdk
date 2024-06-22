@@ -1,0 +1,28 @@
+{
+  "name": "cake-sdk",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap",
+    "test": "node --import tsx --test test/index.ts",
+    "build": "node delete_dist.js && microbundle --tsconfig tsconfig.json --no-sourcemap"
+  },
+  "keywords": [],
+  "author": "xandykati98",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/pg": "^8.11.6",
+    "microbundle": "^0.15.1",
+    "tsx": "^4.15.7"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "pg": "^8.12.0"
+  }
+}

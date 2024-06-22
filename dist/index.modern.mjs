@@ -1,0 +1,1 @@
+import t from"pg";const{Client:o}=t,r=new o;async function n(t){return r.user=t.user,r.password=t.password,r.host=t.host,r.port=t.port,r.database=t.database,await r.connect(),r}function s(){return"1.0.0"}export{n as connect,s as getVersion};
