@@ -1,5 +1,5 @@
 import pg from 'pg'
-
+console.log('process.env.DATABASE_URL', process.env.DATABASE_URL)
 const version = '1.0.0';
 const { Client } = pg
 const client = new Client({
