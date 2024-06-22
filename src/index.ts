@@ -25,3 +25,7 @@ export async function connect(connection_options: {
 export function getVersion() {
     return version;
 }
+
+export async function log() {
+    
+}
