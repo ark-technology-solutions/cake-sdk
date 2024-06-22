@@ -5,9 +5,19 @@ let client = null
 /**
  * @description Connect to the postgres database
  */
-export async function connect(db_url: string) {
+export async function connect(config: {
+    user: string,
+    password: string,
+    host: string,
+    port: number,
+    database: string
+}) {
     client = new Client({
-        connectionString: db_url
+        user: config.user,
+        password: config.password,
+        host: config.host,
+        port: config.port,
+        database: config.database
     })
     await client.connect()
     return client;
