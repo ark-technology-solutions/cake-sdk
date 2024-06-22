@@ -18,6 +18,9 @@ export function getVersion() {
 }
 
 export async function createTables() {
+    if (!client) {
+        throw new Error('Database not connected')
+    }
     const tables = [
         {
             name: 'local_logs',
