@@ -1,14 +1,14 @@
 import pg from 'pg'
-console.log('process.env.DATABASE_URL', process.env.DATABASE_URL)
 const version = '1.0.0';
 const { Client } = pg
-const client = new Client({
-    connectionString: process.env.DATABASE_URL
-})
+let client = null
 /**
  * @description Connect to the postgres database
  */
-export async function connect() {
+export async function connect(db_url: string) {
+    client = new Client({
+        connectionString: db_url
+    })
     await client.connect()
     return client;
 }
